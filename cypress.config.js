@@ -22,8 +22,12 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   e2e: {
-    specPattern: "cypress/e2e/features/**/*.feature",
-    baseUrl: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    specPattern: "cypress/e2e/features/*.feature",
+    baseUrl: "https://opensource-demo.orangehrmlive.com",
+
+    env: {
+      stepDefinitions: "cypress/e2e/features/step_definitions.js",
+    },
     setupNodeEvents,
   },
 });
